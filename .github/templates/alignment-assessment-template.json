@@ -1,0 +1,87 @@
+{
+  "hyperspecVersion": "0.1",
+  "status": "ASSESSMENT_REPORT",
+  "targetComponent": "[Target Component/System Name]",
+  "summary": {
+    "specToCode": {
+      "total": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "codeToSpec": {
+      "total": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "totalGaps": {
+      "total": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "specificationsKeyPerformanceIndicators": {
+      "totalSpecifications": 0,
+      "draftSpecifications": 0,
+      "approvedSpecifications": 0,
+      "alignedSpecifications": 0,
+      "alignedImplementationScore": 0.0,
+      "leafSpecificationsRatio": 0.0,
+      "draftToActiveRatio": 0.0,
+      "totalAcceptanceCriteria": 0,
+      "verifiedAcceptanceCriteria": 0,
+      "acceptanceCriteriaVerificationScore": 0.0,
+      "undocumentedBehaviorDensity": 0.0,
+      "missingFeatureDensity": 0.0,
+      "brokenTraceabilityLinkCount": 0
+    }
+  },
+  "verificationExecutionLog": {
+    "buildCheck": {
+      "command": "[e.g., cargo check / npm run lint]",
+      "status": "[PASS / FAIL]",
+      "notes": ""
+    },
+    "testSuite": {
+      "command": "[e.g., cargo test / npm test]",
+      "status": "[PASS / FAIL]",
+      "totalTests": 0,
+      "passedCount": 0,
+      "failedCount": 0,
+      "passedPercentage": 0.0,
+      "notes": ""
+    }
+  },
+  "specToCodeGaps": [
+    {
+      "gapId": "SPEC-GAP-01",
+      "criticality": "LOW | MEDIUM | HIGH | CRITICAL",
+      "specFile": "[relative/path/to/spec.md]",
+      "line": 12,
+      "requirementDescription": "[e.g., Verification of validation error when email is duplicate]",
+      "findings": "[e.g., The spec defines AAC-03 for duplicate checking, but no corresponding test or backend validation exists in the codebase.]"
+    }
+  ],
+  "codeToSpecGaps": [
+    {
+      "gapId": "CODE-GAP-01",
+      "criticality": "LOW | MEDIUM | HIGH | CRITICAL",
+      "codeFile": "[relative/path/to/source.rs]",
+      "line": 85,
+      "codeElement": "[e.g., fn delete_user_permanently(...) endpoint/function]",
+      "findings": "[e.g., There is a permanent deletion route in the controller and service layer, but the User Management spec only specifies soft-deletes.]"
+    }
+  ],
+  "recommendedActionPlan": [
+    {
+      "id": 1,
+      "actionType": "ALIGN_SPEC | ALIGN_CODE | REMOVE_CODE",
+      "description": "[Description of action to resolve the gap]",
+      "targetGapId": "SPEC-GAP-01"
+    }
+  ]
+}
