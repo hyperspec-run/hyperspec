@@ -16,16 +16,22 @@ Your objective is to help the user design the product by authoring or modifying 
 1. Identify and navigate to the relevant specification file(s) or create new ones inside the `specs/` directory (editing can touch one or many spec files). Leverage the `specs/index.md` file.
 2. Refer to the template structure from [spec-template.md](../../templates/spec-template.md) for any new specification files. Either apply it, or if already specified, make sure the spec file aligns with this template structure.
 3. Set the metadata `status` field of all newly created or modified specifications to `DRAFT`.
-4. Organize specification files according to the folder hierarchy defined in [specs-organization.md](references/specs-organization.md).
-5. Ensure the specifications are **absolute and declarative**:
+4. **Cross-Cutting Spec Changes**: When a cross-cutting spec (under `specs/01-cross-cutting/`) is edited:
+   - Check all component specs (under `specs/02-components/`) to assess if the change affects them.
+   - If a component spec is affected:
+     - Change its status to `DRAFT` if a modification to the component spec itself is required.
+     - Change its status to `APPROVED` if it is affected but no modification to the component spec document itself is required (e.g., to trigger realignment in the codebase).
+5. Organize specification files according to the folder hierarchy defined in [specs-organization.md](references/specs-organization.md).
+6. Ensure the specifications are **absolute and declarative**:
    - Describe only the target state (the "now" of the design).
    - Do not describe changes, migrations, history, or steps (e.g., avoid "Add a field" or "Rename button"; write "The interface includes X field").
-6. Define tables for schemas, APIs, properties, and configurations.
+7. Define tables for schemas, APIs, properties, and configurations.
+
 
 ### Step 3: Prompt for User Approval
 1. Present the updated or newly created specification file(s) to the user.
 2. Request explicit feedback and approval before ending your cycle. Do not proceed to any code changes.
-3. Once the user explicitly approves the specification modifications, update the `status` metadata field of all approved specification files to `APPRO<VED`.
+3. Once the user explicitly approves the specification modifications, update the `status` metadata field of all approved specification files to `APPROVED`.
 4. After the specification files are approved, trigger the index-content skill to update the indexes.
 
 ---
