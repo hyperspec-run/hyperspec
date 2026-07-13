@@ -1,5 +1,5 @@
 ---
-hyperspec-version: 0.1
+hyperspec-version: 0.1.0
 status: DRAFT | APPROVED | ALIGNED
 ---
 # [Feature/Component Name]
@@ -28,4 +28,4 @@ status: DRAFT | APPROVED | ALIGNED
 [Describe the layout components, positions, hierarchy, and responsive behaviors.]
 
 ## Activable Acceptance Criteria [Mandatory for leaf specs, optional otherwise, when acceptance coverage is not fully enforced by child specs]
-[Define the exact test scenarios as acceptance criteria. Each criterion must map to exactly one dedicated E2E test function with its current implementation status. One E2E test function cannot cover multiple acceptance criteria. Acceptance criteria IDs must be lowercase (e.g. `aac-1`), and the E2E test names in the test files must be prefixed with the lowercase ID of the corresponding activable acceptance criteria (e.g. `aac_1_test_name`) for easy backtracking. Ensure that all links in the spec use relative paths, that they are not wrapped in backticks, and that the corresponding E2E test function includes a comment pointing back to the spec line for two-way traceability. Links in markdown must be written as `[link_text](relative/path/to/file)` without outer backticks.]
+[Define the exact test scenarios as acceptance criteria. Each criterion must map to exactly one dedicated E2E test function with its current implementation status. One E2E test function cannot cover multiple acceptance criteria. Acceptance criteria IDs must be unique and lowercase (e.g. `aac-1`), and the E2E test names in the test files must be prefixed with the lowercase ID of the corresponding activable acceptance criteria (e.g. `aac_1_test_name`) for easy backtracking. Ensure that the corresponding E2E test function includes a comment pointing back to the spec line for two-way traceability. Links in markdown must be written as `[link_text](relative/path/to/file)` without outer backticks.]
