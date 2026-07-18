@@ -10,7 +10,7 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 HARNESS_DIR="$PROJECT_ROOT/harness"
 STAGING_DIR="$PROJECT_ROOT/.copilot_staging"
 COPILOT_DIR="$STAGING_DIR/.github"
-ZIP_PATH="$PROJECT_ROOT/copilot.zip"
+TAR_PATH="$PROJECT_ROOT/copilot.tar.gz"
 
 SUCCESS=false
 
@@ -21,9 +21,9 @@ cleanup() {
   if [ "$SUCCESS" = "false" ]; then
     echo "Error occurred. Cleaning up and rolling back..." >&2
 
-    # Remove partial zip artifact if created
-    if [ -f "$ZIP_PATH" ]; then
-      rm -f "$ZIP_PATH" >/dev/null 2>&1
+    # Remove partial tar.gz artifact if created
+    if [ -f "$TAR_PATH" ]; then
+      rm -f "$TAR_PATH" >/dev/null 2>&1
     fi
 
     # Remove the temporary staging folder if created
@@ -91,15 +91,15 @@ if [ -d "$HARNESS_DIR/rules" ]; then
   done
 fi
 
-# 4. Zip the .github folder (run from staging directory to keep relative paths correct)
+# 4. Tar/gzip the .github folder (run from staging directory to keep relative paths correct)
 cd "$STAGING_DIR"
-zip -q -r "$ZIP_PATH" .github
+tar -czf "$TAR_PATH" .github
 
-# 5. Clean the temporary folders, only keeping the zip artifact
+# 5. Clean the temporary folders, only keeping the tar.gz artifact
 rm -rf "$STAGING_DIR"
 
-# 6. Output the full path of the zip artifact to stdout
-echo "$ZIP_PATH"
+# 6. Output the full path of the tar.gz artifact to stdout
+echo "$TAR_PATH"
 
 # Mark script as successful
 SUCCESS=true

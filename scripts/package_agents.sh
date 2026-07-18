@@ -9,7 +9,7 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
 HARNESS_DIR="$PROJECT_ROOT/harness"
 AGENTS_DIR="$PROJECT_ROOT/.agents"
-ZIP_PATH="$PROJECT_ROOT/agents.zip"
+TAR_PATH="$PROJECT_ROOT/agents.tar.gz"
 
 SUCCESS=false
 
@@ -20,9 +20,9 @@ cleanup() {
   if [ "$SUCCESS" = "false" ]; then
     echo "Error occurred. Cleaning up and rolling back..." >&2
 
-    # Remove partial zip artifact if created
-    if [ -f "$ZIP_PATH" ]; then
-      rm -f "$ZIP_PATH" >/dev/null 2>&1
+    # Remove partial tar.gz artifact if created
+    if [ -f "$TAR_PATH" ]; then
+      rm -f "$TAR_PATH" >/dev/null 2>&1
     fi
 
     # Remove the temporary .agents/ folder if created
@@ -57,15 +57,15 @@ fi
 mkdir -p "$AGENTS_DIR"
 cp -a "$HARNESS_DIR"/. "$AGENTS_DIR"/
 
-# 3. Zip the .agents folder (run from project root to keep relative paths correct)
+# 3. Tar/gzip the .agents folder (run from project root to keep relative paths correct)
 cd "$PROJECT_ROOT"
-zip -q -r "$ZIP_PATH" .agents
+tar -czf "$TAR_PATH" .agents
 
-# 4. Clean the temporary folders, only keeping the zip artifact
+# 4. Clean the temporary folders, only keeping the tar.gz artifact
 rm -rf "$AGENTS_DIR"
 
-# 5. Output the full path of the zip artifact to stdout
-echo "$ZIP_PATH"
+# 5. Output the full path of the tar.gz artifact to stdout
+echo "$TAR_PATH"
 
 # Mark script as successful
 SUCCESS=true

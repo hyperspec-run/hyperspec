@@ -1,10 +1,38 @@
-# Hyperspec
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="docs/assets/logo-light.svg">
+    <img alt="Hyperspec" src="docs/assets/logo-light.svg" width="100" />
+  </picture>
+  <h1>HYPERSPEC</h1>
+</div>
+<div align="center">
+  <p>Specs as an absolute, declarative design plane.</p>
+  <p>If it's not in the spec, it doesn't exist.</p>
+</div>
+<p align="center">
+    <a href="https://github.com/hyperspec-run/hyperspec/releases/latest"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/hyperspec-run/hyperspec"></a>
+    <a href="https://github.com/hyperspec-run/hyperspec/stargazers"><img src="https://img.shields.io/github/stars/hyperspec-run/hyperspec?style=social" alt="GitHub stars"/></a>
+    <a href="https://github.com/hyperspec-run/hyperspec/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/hyperspec-run/hyperspec" alt="License"/></a>
+</p>
 
-Hyperspec is a declarative, specification-driven framework for **designing products** and harnessing coding agents. It treats the product specification not merely as documentation, but as the single source of truth, the design model, and the design plane for the entire product lifecycle.
+## Table of Contents
+
+- [ℹ️ What is Hyperspec?](#what-is-hyperspec)
+- [✨ Core Pillars](#-core-pillars)
+- [🚀 Get started](#get-started)
+- [🛠 How to use](#how-to-use)
+  - [1. Design — `edit-specs`](#1-design--edit-specs)
+  - [2. Realign — `align-code-to-specs`](#2-realign--align-code-to-specs)
+  - [3. Assess — `assess-alignment` (optional)](#3-assess--assess-alignment-optional)
+
+
+## ℹ️ What is Hyperspec?
+
+Hyperspec is a declarative, specification-driven framework for **designing products** and harnessing coding agents. It treats the product specification not merely as documentation, but as the single source of truth, and the design plane for the entire product lifecycle.
 
 In a Hyperspec workflow, product design is the primary activity. Code is never edited directly, and agents are never instructed through ad-hoc requests. Instead, the design team or developers refine the product design by updating absolute, declarative specifications. Coding agents then serve as the engine to align the codebase to match this designed state.
 
----
 
 ## 🌟 Core Pillars
 
@@ -22,9 +50,25 @@ The development cycle follows a strict two-step loop:
 1. **Design & Spec Update**: The product's specifications are updated to reflect the newly designed state of the product.
 2. **Codebase Alignment**: A coding agent analyzes the changes in the specs (using tools like `git diff`) and aligns the codebase with the updated design.
 
----
 
-## How to use
+## 🚀 Get started
+
+To install the agent instructions and skills in your workspace, run the following command from your project root:
+
+### Antigravity
+
+```bash
+curl -sSL https://github.com/hyperspec-run/hyperspec/releases/latest/download/agents.tar.gz | tar -xz
+```
+
+### GitHub Copilot
+
+```bash
+curl -sSL https://github.com/hyperspec-run/hyperspec/releases/latest/download/copilot.tar.gz | tar -xz
+```
+
+
+## 🛠 How to use
 
 You steer Hyperspec by **evolving the specs, never by prompting for code directly**. Agents help on both sides — authoring the specs with you, then aligning the code. Work happens in three stages, each driven by an entrypoint skill.
 
