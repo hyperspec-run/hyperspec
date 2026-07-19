@@ -1,5 +1,5 @@
 ---
-hyperspec-version: 0.1.0
+hyperspec-version: 0.1.2
 status: DRAFT | APPROVED | ALIGNED
 ---
 # [Feature/Component Name]

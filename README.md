@@ -36,16 +36,18 @@ In a Hyperspec workflow, product design is the primary activity. Code is never e
 
 ## 🌟 Core Pillars
 
-### 1. Spec as the Design Plane
-The specifications (`specs`) describe the exact expected state of the product, serving as the blueprint for both product design and engineering. Every design detail, edge case, and business rule is designed within the spec first. If a behavior or design is not in the spec, it does not exist in the product.
+### 1. Absolute Declarative Specifications
+Specs always describe the **exact target state** of the application. They contain no concept of before/after, steps of modification, or historical changes. Product designers and engineers focus entirely on modeling the perfect end-state of the product.
 
-### 2. Absolute Declarative Specifications
-Specs always describe the *exact target state* of the application. They contain no concept of before/after, steps of modification, or historical changes. Product designers and engineers focus entirely on modeling the perfect end-state of the product. History is maintained solely by version control (e.g., Git history).
+Key differentiators from other systems:
 
-### 3. Design-Driven Development
+- History is maintained **solely by version control** (e.g., Git history).
+- User stories or implementation plans are **not** part of the specs: these implementation details will be handled by the coding agents.
+
+### 2. Design-Driven Development
 Developers and designers never directly modify code or run ad-hoc agent prompts. Any change to the product begins with a design update in the specifications, which automatically propagates down to the codebase.
 
-### 4. Alignment-Based Workflow
+### 3. Alignment-Based Workflow
 The development cycle follows a strict two-step loop:
 1. **Design & Spec Update**: The product's specifications are updated to reflect the newly designed state of the product.
 2. **Codebase Alignment**: A coding agent analyzes the changes in the specs (using tools like `git diff`) and aligns the codebase with the updated design.

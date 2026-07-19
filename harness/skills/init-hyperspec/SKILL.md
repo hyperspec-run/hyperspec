@@ -5,7 +5,7 @@ description: Skill to run in order to initialize Hyperspec
 Create a `/.hyperspec.json` file with the following content:
 ```json
 {
-  "version": "0.1.0",
+  "version": "0.1.2",
   "next-acceptance-test-identifiers": [
     "aac-1",
   ]

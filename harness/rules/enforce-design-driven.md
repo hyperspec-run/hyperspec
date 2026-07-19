@@ -4,7 +4,7 @@ trigger: always_on
 ## Enforce Design Driven Development
 
 All AI sessions MUST use one of the following entrypoint skill:
-- edit-spec
+- edit-specs
 - align-code-to-specs
 - assess-alignment
 
